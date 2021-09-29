@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Strings {
     public static void main(String[] args) {
         String s = "Strings examples";
@@ -38,7 +40,7 @@ public class Strings {
         s = "Why is garbage collection necessary in Java.";
         int pos = s.indexOf('.');
         StringBuilder sb = new StringBuilder(s);
-        sb.setCharAt(pos,'?');
+        sb.setCharAt(pos, '?');
         System.out.println(sb);
 
         //Заменить подстроку в строке
@@ -48,11 +50,45 @@ public class Strings {
 
         //Извлечь из строки подстроки JVM и JRE
         s = "JDK vs JRE vs JVM";
-        result = s.substring(s.length()-3);
+        result = s.substring(s.length() - 3);
         System.out.println(result);
-        result = s.substring(7,10);
+        result = s.substring(7, 10);
         System.out.println(result);
 
+        //Удалить все скобки из выражения
+        s = "What are the {wrapper} {classes} in Java?";
+        result = s.replaceAll("[{}]", "");
+        System.out.println(result);
+
+        //Заменить "," на ";"
+        s = "int, byte, short, long, float, double, boolean, and char";
+        result = s.replaceAll("[,]", ";");
+        System.out.println(result);
+
+        //Заменить первую букву на прописную
+        s = "what is JIT compiler in Java?";
+        StringBuilder sbr = new StringBuilder(s);
+        sbr.setCharAt(0, (s.substring(0, 1).toUpperCase()).charAt(0));
+        System.out.println(sbr);
+
+        //Разбить строку на подстроки
+        s = "Access modifiers in Java are: \nDefault\nPrivate\nProtected\nPublic"; // ДОРАБОТАТЬ!!!!
+        String[] sarr = s.split("\n");
+        //for (String  lem=0; i<s.length(); i++)
+
+        //Удалить концевые пробелы
+        s = " Object-Oriented Programming or OOPs is a programming style that is associated with concepts like: "
+                + "innheritance, encapsulation, polymorphism, abstraction. ";
+        result = s.trim();
+        System.out.println(result);
+
+        //Найти в строке символ с наименьшим кодом UTF-8
+        s = "string";
+        char[] charrs = s.toCharArray();
+        int min = charrs[0];
+        for (int i = 0; i < s.length(); i++)
+            if (min > charrs[i]) min = charrs[i];
+        System.out.println((char) min);
 
 
     }
