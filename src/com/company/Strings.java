@@ -6,13 +6,13 @@ public class Strings {
     public static void main(String[] args) {
         String s = "Strings examples";
         //Получить символ по его номеру, а также номер символа в кодовой таблице UTF-8
-        char c = s.charAt(0);
+        char c = s.charAt(1);
         //System.out.println(s);
         System.out.printf("Symbol:%c, number:%d%n", c, (int) c);
 
         //Собрать строку из символов
-        char c1 = '2', c2 = '\u00B7', c3 = '\u03C0', c4 = '=', c5 = '1',
-                c6 = '8', c7 = '0', c8 = '\u00B0';
+        char c1 = '2', c2 = '\u00B7', c3 = '\u03C0', c4 = '=', c5 = '3',
+                c6 = '6', c7 = '0', c8 = '\u00B0';
         s = "" + c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8;
         System.out.println(s);
 
